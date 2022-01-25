@@ -9,9 +9,9 @@ My coursework in the Public Policy & Management program here has provided me wit
 
 # Portfolio
 Week 2: Visualizing Government Debt  
-Week 3: Critique by Design
-Week 4: Final Project, Part I
-Week 5: Final Project, Part II
-Week 6: Final Project, Part III
+Week 3: Critique by Design  
+Week 4: Final Project, Part I   
+Week 5: Final Project, Part II  
+Week 6: Final Project, Part III   
 Week 7: Final Presentation
 
