@@ -8,7 +8,7 @@ Hello there! My name is Kafui Godzi. I use she/her/hers pronouns. I’m a second
 My coursework in the Public Policy & Management program here has provided me with a wide variety of data analytics skills, such as programming, database management and geospatial network analysis among others. As such, I hope that this course will provide me with the skills to succinctly and persuasively communicate ideas, which stem from processing large datasets, to a general audience.
 
 # Portfolio
-Week 2: Visualizing Government Debt  
+[Week 2: Visualizing Government Debt](/dataviz2.md)  
 Week 3: Critique by Design  
 Week 4: Final Project, Part I   
 Week 5: Final Project, Part II  
