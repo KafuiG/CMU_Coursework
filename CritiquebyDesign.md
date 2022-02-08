@@ -1,5 +1,13 @@
 ## Step 1: find a data visualization (with data you can use!)
 In 2015, the United Nations set universal (i.e., 100%) access to affordable, reliable and clean electricity by 2030 as Goal 7 of its Sustainable Development Goals (SDGs). However, as of 2020, over 800 million people lack access to electricity, 600 million of which reside in sub-Saharan Africa. As such, efforts have been made to increase electricity access in the sub-continent. In light of this, utility companies and other stakeholders in the energy sector have sought to determine how demand for electricity will evolve in the coming years. Thus, I chose to visualize the Ethiopian Energy Authority's electricity demand projections to show the projected trend in demand over the coming years, per their estimates.
+Here is the visualization below.
+![image](https://user-images.githubusercontent.com/98299182/152928983-3a62b02d-90fc-4599-8bc8-d187aca79a0b.png)
+
+I had to create a data table from the visualization above because it was not provided.Here is the data table below.
+![image](https://user-images.githubusercontent.com/98299182/152928857-a35db977-1fb3-4c7f-bdf6-0424f44b2149.png)
+
+
+
 
 ## Step 2: critique the visualization
 I will be critiquing this visualization based on the following criteria based on using Stephen Frew’s Data Visualization Effectiveness Profile.
@@ -38,8 +46,12 @@ I believe the primary audience for this visualization are stakeholders in the Et
 The method used to evaluate the data visualization here is adequate, in my opinion. It allows for a qualitative assessment of the visualization and the inclusion of detail for each metric of evaluation. However, the absence of quantitative metrics makes it challenging to give an overall rating of the visualization, and potentially compare it to other visualizations. Firstly, I recommend creating a scale of 1 to 5 to assess the visualization using each metric in addition to a detailed description of how the visualization performed in each category. Secondly, I would create a category to rate a visualization based on the diversity of audience it can reach (i.e., would people of varying demographics understand what is being communicated in the visualization?)
 
 
-
 ## Step 3: wireframe a solution
+I created an intial visualization in excel just visualize the data in a different way.
+![image](https://user-images.githubusercontent.com/98299182/152929602-29b8ee77-e7a2-4ea3-8870-86a17b2da378.png)
+I then sketched my visualization shown below to reflect the insights and problem areas I identified in the critique above.
+![unnamed (1)](https://user-images.githubusercontent.com/98299182/152944578-4c0b465e-1ee9-452a-9a7a-692c313821df.jpg)
+
 
 ## Step 4: test the solution
 I interviewed 4 people for feedback on my edesign above. I asked the following questions below and got these replies.
@@ -71,11 +83,12 @@ I interviewed 4 people for feedback on my edesign above. I asked the following q
 
 **Question 7. What does not work?**
   - "Its hard to connect the demand to year amounts."
-  - "Change the colour scheme."
-  - "Try and emphasis the best and wort case scenarios as an area of projection."
+  - "Change the color scheme."
+  - "Try and emphasize the best and worst case scenarios as an area of projection."
   - "Include a description of the model."
   - "Change this to an area chart."
  
-
-
+ **Reflection and takeaway**
+I learned that people who were more familiar with energy research (i.e., experts) tended to understand the information being conveyed in the visualization very easily, and as a result, did not pay much attention to other details. Less informed audiences needed to rely on the details to understand the information being communicated in the chart. As such, these audiences made more helpful recommendations about improving the visualization than their expert counterparts.
 ## Step 5: build your solution
+<div class="flourish-embed flourish-chart" data-src="visualisation/8639614"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
