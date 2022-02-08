@@ -1,7 +1,7 @@
 ## Step 1: find a data visualization (with data you can use!)
 
 ## Step 2: critique the visualization
-** 1.	Usefulness ** Is it useful for the intended audience? Does it communicate valuable information?
+**1.	Usefulness** Is it useful for the intended audience? Does it communicate valuable information?
 I think it gives a picture of total electricity sales over several years. However, the lack of distinction between the actuals and the forecasted sales does not make the forecasts clear. The high and low bars worst- and best-case scenario forecast but the legend title does not communicate this valuable information. It nonetheless shows a steady rise of electricity sales at the base case over the coming years. 
 ** 2.	Completeness ** Does the visualization have everything necessary to make it understandable?
 It has the basics needed to make it somewhat understandable. The legend does not entirely explain what the bars mean. High, low, and base might not communicate to an audience a forecast above the predicted base values or below the predicted base values. The title also does not spark discussion. Without looking at the title the audience should be able to quickly identify the unit of sales. Again the legend details does not give a complete picture that the high and low bars are worst- and best-case scenarios of the base case.
