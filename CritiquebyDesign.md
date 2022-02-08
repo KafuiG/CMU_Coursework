@@ -1,4 +1,5 @@
 ## Step 1: find a data visualization (with data you can use!)
+In 2015, the United Nations set universal (i.e., 100%) access to affordable, reliable and clean electricity by 2030 as Goal 7 of its Sustainable Development Goals (SDGs). However, as of 2020, over 800 million people lack access to electricity, 600 million of which reside in sub-Saharan Africa. As such, efforts have been made to increase electricity access in the sub-continent. In light of this, utility companies and other stakeholders in the energy sector have sought to determine how demand for electricity will evolve in the coming years. Thus, I chose to visualize the Ethiopian Energy Authority's electricity demand projections to show the projected trend in demand over the coming years, per their estimates.
 
 ## Step 2: critique the visualization
 I will be critiquing this visualization based on the following criteria based on using Stephen Frew’s Data Visualization Effectiveness Profile.
@@ -24,9 +25,10 @@ It is a simple visualization the grey horizontal lines behind the bar graph are 
 **2.7	Engagement**
 This visualization although simple poses a lot more questions than insight. The title does not inspire the audience to talk about the data.
 
-**Follow up Question**
+### **Follow up Questions**
 
 **2.8 Describe your overall observations about the data visualization here. What stood out to you? What did you find worked well? What didn't? What, if anything, would you do differently?**
+
 The first thing I observed was the colorful bars and legends. Generally, putting the three scenarios in the same chart (i.e., base, high and low) helped show the audience how demand grows in each scenario. However, I believe the use of bar charts did not properly communicate the trend in electricity demand over the years. I would use a line chart to do a better job of showing the trend.
 
 **2.9	Who is the primary audience for this tool? Do you think this visualization is effective for reaching that audience? Why or why not?**
@@ -74,5 +76,6 @@ I interviewed 4 people for feedback on my edesign above. I asked the following q
   - "Include a description of the model."
   - "Change this to an area chart."
  
+
 
 ## Step 5: build your solution
