@@ -2,7 +2,7 @@
 In 2015, the United Nations set universal (i.e., 100%) access to affordable, reliable and clean electricity by 2030 as Goal 7 of its Sustainable Development Goals (SDGs). However, as of 2020, over 800 million people lack access to electricity, 600 million of which reside in sub-Saharan Africa. As such, efforts have been made to increase electricity access in the sub-continent. In light of this, utility companies and other stakeholders in the energy sector have sought to determine how demand for electricity will evolve in the coming years. Thus, I chose to visualize the Ethiopian Energy Authority's electricity demand projections to show the projected trend in demand over the coming years, per their estimates.
 Here is the visualization below.
 ![image](https://user-images.githubusercontent.com/98299182/152928983-3a62b02d-90fc-4599-8bc8-d187aca79a0b.png)
-
+<img src="https://user-images.githubusercontent.com/98299182/152928983-3a62b02d-90fc-4599-8bc8-d187aca79a0b.png" width="700" height="700">
 I had to create a data table from the visualization above because it was not provided.Here is the data table below.
 ![image](https://user-images.githubusercontent.com/98299182/152928857-a35db977-1fb3-4c7f-bdf6-0424f44b2149.png)
 
