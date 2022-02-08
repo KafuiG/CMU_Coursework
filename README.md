@@ -13,7 +13,7 @@ My coursework in the Public Policy & Management program here has provided me wit
 ### Week 2
 [Visualizing Government Debt](/dataviz2.md)  
 ### Week 3
-[Critique by Design](/Critique by Design.md)
+[Critique by Design](/CritiquebyDesign.md)
 ### Week 4
 Final Project, Part I   
 ### Week 5
