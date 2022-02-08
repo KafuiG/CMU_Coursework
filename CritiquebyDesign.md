@@ -1,10 +1,12 @@
 ## Step 1: find a data visualization (with data you can use!)
 In 2015, the United Nations set universal (i.e., 100%) access to affordable, reliable and clean electricity by 2030 as Goal 7 of its Sustainable Development Goals (SDGs). However, as of 2020, over 800 million people lack access to electricity, 600 million of which reside in sub-Saharan Africa. As such, efforts have been made to increase electricity access in the sub-continent. In light of this, utility companies and other stakeholders in the energy sector have sought to determine how demand for electricity will evolve in the coming years. Thus, I chose to visualize the Ethiopian Energy Authority's electricity demand projections to show the projected trend in demand over the coming years, per their estimates.
 Here is the visualization below.
-![image](https://user-images.githubusercontent.com/98299182/152928983-3a62b02d-90fc-4599-8bc8-d187aca79a0b.png)
+
 <img src="https://user-images.githubusercontent.com/98299182/152928983-3a62b02d-90fc-4599-8bc8-d187aca79a0b.png" width="700" height="700">
+
 I had to create a data table from the visualization above because it was not provided.Here is the data table below.
-![image](https://user-images.githubusercontent.com/98299182/152928857-a35db977-1fb3-4c7f-bdf6-0424f44b2149.png)
+
+<img src="https://user-images.githubusercontent.com/98299182/152928857-a35db977-1fb3-4c7f-bdf6-0424f44b2149.png" width="700" height="700">
 
 
 
@@ -47,13 +49,17 @@ The method used to evaluate the data visualization here is adequate, in my opini
 
 
 ## Step 3: Wireframe a solution
-**Initial wireframe**
+**Initial Predesign Sketch**
+
 I created an intial visualization in excel just visualize the data in a different way.
-![image](https://user-images.githubusercontent.com/98299182/152929602-29b8ee77-e7a2-4ea3-8870-86a17b2da378.png)
+
+<img src="https://user-images.githubusercontent.com/98299182/152929602-29b8ee77-e7a2-4ea3-8870-86a17b2da378.png" width="700" height="700">
+
+**Final Sketch**
 
 I then sketched my visualization shown below to reflect the insights and problem areas I identified in the critique above.
-![Sketch](https://user-images.githubusercontent.com/98299182/152946266-01fffa48-ee62-4312-8b63-4f2d642947cf.JPG)
 
+<img src="https://user-images.githubusercontent.com/98299182/152946266-01fffa48-ee62-4312-8b63-4f2d642947cf.JPG" width="700" height="700">
 
 ## Step 4: test the solution
 I interviewed 4 people for feedback on my edesign above. I asked the following questions below and got these replies.
