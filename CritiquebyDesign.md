@@ -46,41 +46,38 @@ I believe the primary audience for this visualization are stakeholders in the Et
 The method used to evaluate the data visualization here is adequate, in my opinion. It allows for a qualitative assessment of the visualization and the inclusion of detail for each metric of evaluation. However, the absence of quantitative metrics makes it challenging to give an overall rating of the visualization, and potentially compare it to other visualizations. Firstly, I recommend creating a scale of 1 to 5 to assess the visualization using each metric in addition to a detailed description of how the visualization performed in each category. Secondly, I would create a category to rate a visualization based on the diversity of audience it can reach (i.e., would people of varying demographics understand what is being communicated in the visualization?)
 
 
-## Step 3: wireframe a solution
+## Step 3: Wireframe a solution
+**Initial wireframe**
 I created an intial visualization in excel just visualize the data in a different way.
 ![image](https://user-images.githubusercontent.com/98299182/152929602-29b8ee77-e7a2-4ea3-8870-86a17b2da378.png)
+
 I then sketched my visualization shown below to reflect the insights and problem areas I identified in the critique above.
-![unnamed (1)](https://user-images.githubusercontent.com/98299182/152944578-4c0b465e-1ee9-452a-9a7a-692c313821df.jpg)
+![Sketch](https://user-images.githubusercontent.com/98299182/152946266-01fffa48-ee62-4312-8b63-4f2d642947cf.JPG)
 
 
 ## Step 4: test the solution
 I interviewed 4 people for feedback on my edesign above. I asked the following questions below and got these replies.
+
 **Question 1. Can you tell me what you think this is?**
    - "Yes, I can it shows power demand in Ethiopia."
    - "Change in demand for energy over time with margins of error."
-    
 **Question 2. Can you describe to me what this is telling you?**
   - "It is showing me the forecasted electricity demand in Ethiopia for the next 30+ years. Demand will continue to grow rapidly in Ethiopia even in the worst-case scenario.
   - "Demand for energy is projected to increase between 2012 and 2052"
-
 **Question 3.	Is there anything you find surprising or confusing?**
   - "No."
   - "The y axis isnt scaled, and the x axis appears discretized continuous. may be better represented using a histogram"
   - "Is there a model about the visualization that can be included."
-
 **Question 4. Who do you think is the intended audience for this?**
   - "Energy policymakers, concerned/interested Ethiopians, energy researchers, etc."
   - "Someone interested in a report out of energy demand trends over time."
-
 **Question 5. Is there anything you would change or do differently?**
   - "No"
   - "I'd represent this using a histogram"
-
 **Question 6. What works in this visualization?**
   - "There is better distinction between the prediction and actual data values."
   - "The X and Y-axis better explain the visuals."
   - "The visualization section."
-
 **Question 7. What does not work?**
   - "Its hard to connect the demand to year amounts."
   - "Change the color scheme."
@@ -89,6 +86,8 @@ I interviewed 4 people for feedback on my edesign above. I asked the following q
   - "Change this to an area chart."
  
  **Reflection and takeaway**
-I learned that people who were more familiar with energy research (i.e., experts) tended to understand the information being conveyed in the visualization very easily, and as a result, did not pay much attention to other details. Less informed audiences needed to rely on the details to understand the information being communicated in the chart. As such, these audiences made more helpful recommendations about improving the visualization than their expert counterparts.
+I learned that people who were more familiar with energy research (i.e., experts) tended to understand the information being conveyed in the visualization very easily, and as a result, did not pay much attention to other details. Less informed audiences needed to rely on the details to understand the information being communicated in the chart. As such, these audiences made more helpful recommendations about improving the visualization than their expert counterparts. Taking this in to consideration _one_ sought to create avisualizations for a non-technical to understand.
+
 ## Step 5: build your solution
+Using Flourish to I tried to visualize the data using different charts, including the ones suggested when I tested my solution. However, given flourishes limitations it was difficult to show the distinction between the actual and projected data. The projected line chart showed the best distinction. Because projected values in Flourish need to be shown in a different column it created a lot of redundant words when I created a legend. The other option was to visualize define the lines using titles directly following the lines as you see below. However, this caused the actual amounts to also be labelled. Considering these unfavorable options, I went with the label. Another issue that was raised in the critique of my redesign was the color scheme. In my final solution I used the https://coolors.co/palettes/trending website to generate a purple color palate. I went with varying shades of purple instead of the original colors because it gave information a neutral tone. Depending on the audience the best-case projection might not be favorable. For example, an energy investor the best-case scenario is more favorable because it presents an opportunity for profit.  However, the energy minister of Ethiopia might not see this as favorable if the country does not have enough supply to meet demand. I could not scale the y-axis as an interviewee suggested because this data was scrapped from the visuals. I also included a an engaging title and subtitle to give more information to the audience without crowding the visuals. Lastly, the y-axis title was changed and positioned in a more readable orientation. While the x-axis did not need a title because it clear shows that it captures the years. The orientation for this was also changed slightly to improve readability.
 <div class="flourish-embed flourish-chart" data-src="visualisation/8639614"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
