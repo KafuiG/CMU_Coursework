@@ -9,20 +9,21 @@ The image below shows the emotional journey I expect the audience to experience.
 
 ### Here's an overview of the major elements:
 	- Overall overview of mental health of US universities students.
+		- Specifically highlight which aspects of mental health need more urgent attention (i.e., depression and anxiety) based on statistics.
         - Impact that negative metal health in US schools has had on people and maybe the country (Google Scholar research studies + news articles may be helpful)
-	- Covid -19 effect on mental health 
-	- Case study on 2/3 schools with poor mental health (Georgia Tech, University of Pennsylvana, CMU)
-	- One case study on a school with positive mental health
+	- Covid -19 effect on mental health: a case study of students in Texas A&M
+	- Case study on 2/3 schools with poor mental health: Georgia Tech and University of Pennsylvana
 	- Recommendations of what schools need to do: invest in expanding counseling centers, regular evaluation of hired psychologists in counseling center, student evaluation of counseling center every semester, etc.
-	- Call to action: Impacts that positive mental health can have on American society/economic growth, etc….
+	- Call to action: Impacts that positive mental health can have on American society/economic growth, etc….based on Georgia Tech's mental health task force reports.
 
 ## Initial Sketches
 ![Impact of Mental health on students](https://user-images.githubusercontent.com/98299182/153797019-7e4dc416-adc4-43d2-9b82-1b496c192606.png)
 
 ## Data Sources
-1. I will use data from [Acha](https://www.acha.org/NCHA/ACHA-NCHA_Data/Publications_and_Reports/NCHA/Data/Reports_ACHA-NCHAIIc.aspx) to compare mental health finfding between 2019 and 2015.
-2. I will aslo use information form The Healthy Minds Study to show or compare symptoms and what students are curently dealing with. I have requested for the data from The site and should be recieving it shortly.
-3. I will also talk sbout the major concerns troubled students present from [The Association for University and College Counseling Center Directors](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/viewer.html?pdfurl=https%3A%2F%2Fwww.aucccd.org%2Fassets%2Fdocuments%2FSurvey%2F2019-2020%2520Annual%2520Report%2520FINAL%2520March-2021.pdf&clen=1857432&chunk=true)
+1. I will use data from [ACHA](https://www.acha.org/NCHA/ACHA-NCHA_Data/Publications_and_Reports/NCHA/Data/Reports_ACHA-NCHAIIc.aspx) to compare mental health finfding between 2019 and 2015.
+2. I will also use information from [The Healthy Minds Study](https://healthymindsnetwork.org/data/) to show or compare symptoms and what students are curently dealing with. I have requested for the data from The site and should be recieving it shortly.
+3. I will also talk about the major concerns troubled students present from [AUCCCD](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/viewer.html?pdfurl=https%3A%2F%2Fwww.aucccd.org%2Fassets%2Fdocuments%2FSurvey%2F2019-2020%2520Annual%2520Report%2520FINAL%2520March-2021.pdf&clen=1857432&chunk=true)
+4. Furthermore, I have identified reports from [Georgia Institute of Technology](https://www.gatech.edu/sites/default/files/documents/pathforward/gt-student-mental-health-report.pdf) and [University of Pennsylvania](https://repository.upenn.edu/cgi/viewcontent.cgi?article=1196&context=anthro_seniortheses) that can be used as case studies regarding poor mental health in US schools. Additionally, I will be using [a dataset of mental health statistics of students in Texas A&M University](https://www.jmir.org/2020/9/e22817/) to highlight the impact of COVID-19 on mental health in US Schools.
 
 
 ## Method and Medium
