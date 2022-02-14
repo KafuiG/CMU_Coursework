@@ -5,7 +5,7 @@ This project is to meant to shed light on the growing concern of college student
 ## Project Outline
 ### Story Arc
 The image below shows the emotional journey I expect the audience to experience. The smiley faces represent the highs and lows.
-
+![image](https://user-images.githubusercontent.com/98299182/153808649-1b5d00d9-6423-48d7-a709-5ef1ec45902c.png)
 
 ### Here's an overview of the major elements:
 - Overall overview of mental health of US universities students.
