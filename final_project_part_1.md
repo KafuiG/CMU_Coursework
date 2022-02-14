@@ -19,6 +19,10 @@ The image below shows the emotional journey I expect the audience to experience.
 ## Initial Sketches
 ![Impact of Mental health on students](https://user-images.githubusercontent.com/98299182/153797019-7e4dc416-adc4-43d2-9b82-1b496c192606.png)
 
+![Breakdown of anxiety Screening](https://user-images.githubusercontent.com/98299182/153802690-f524bae4-3c24-4e65-b2ff-a31b0487175f.png)
+
+![Breakdown of depression Screening](https://user-images.githubusercontent.com/98299182/153802764-8bbb6c88-9233-4171-b031-fad3d6d8fff8.png)
+
 ## Data Sources
 1. I will use data from [ACHA](https://www.acha.org/NCHA/ACHA-NCHA_Data/Publications_and_Reports/NCHA/Data/Reports_ACHA-NCHAIIc.aspx) to compare mental health finfding between 2019 and 2015.
 2. I will also use information from [The Healthy Minds Study](https://healthymindsnetwork.org/data/) to show or compare symptoms and what students are curently dealing with. I have requested for the data from The site and should be recieving it shortly.
