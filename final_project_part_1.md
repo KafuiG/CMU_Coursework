@@ -8,13 +8,13 @@ The image below shows the emotional journey I expect the audience to experience.
 
 
 ### Here's an overview of the major elements:
-	- Overall overview of mental health of US universities students.
-		- Specifically highlight which aspects of mental health need more urgent attention (i.e., depression and anxiety) based on statistics.
-        - Impact that negative metal health in US schools has had on people and maybe the country (Google Scholar research studies + news articles may be helpful)
-	- Covid -19 effect on mental health: a case study of students in Texas A&M
-	- Case study on 2/3 schools with poor mental health: Georgia Tech and University of Pennsylvana
-	- Recommendations of what schools need to do: invest in expanding counseling centers, regular evaluation of hired psychologists in counseling center, student evaluation of counseling center every semester, etc.
-	- Call to action: Impacts that positive mental health can have on American society/economic growth, etc….based on Georgia Tech's mental health task force reports.
+- Overall overview of mental health of US universities students.
+- Specifically highlight which aspects of mental health need more urgent attention (i.e., depression and anxiety) based on statistics.
+- Impact that negative metal health in US schools has had on people and maybe the country (Google Scholar research studies + news articles may be helpful)
+- Covid -19 effect on mental health: a case study of students in Texas A&M
+- Case study on 2/3 schools with poor mental health: Georgia Tech and University of Pennsylvana
+- Recommendations of what schools need to do: invest in expanding counseling centers, regular evaluation of hired psychologists in counseling center, student evaluation of counseling center every semester, etc.
+- Call to action: Impacts that positive mental health can have on American society/economic growth, etc….based on Georgia Tech's mental health task force reports.
 
 ## Initial Sketches
 ![Impact of Mental health on students](https://user-images.githubusercontent.com/98299182/153797019-7e4dc416-adc4-43d2-9b82-1b496c192606.png)
