@@ -13,12 +13,13 @@ My user research protocol describes what you hope to find during my user intervi
 
 
 ## Interviewee Personas
+
 |  |  Target Audience Category | Occupation | Level of Education | Age |
 |-----|-----|-----| ----- |----- |
 | **Interviewee 1** |  |  |  | |
 | **Interviewee 2** |  | | | |
 | **Interviewee 3** |  | | | |
 
-# Interview Findings
+## Interview Findings
 
 ## Changes to be Implemented in Part III
