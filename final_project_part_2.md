@@ -5,7 +5,7 @@ My storyboards gives a visual walk-through of the primary elements of my updated
 
 
 ## Target Audience
-
+The target audience for my presentation is US university administration officials, and stakeholders in the college system.
 ## Approach to Identifying Interviewees
 My user research protocol describes what you hope to find during my user interviews, including my research questions and the script. Since my project aims to address the state of mental health in US colleges, and recommendations for solutions to these mental health issues, my intended audience is university administration officials. However, due to my inability to interview such high-ranking officials, I interviewed three people in academia (i.e., doctorate students), two of whom are recent university graduates.
 
