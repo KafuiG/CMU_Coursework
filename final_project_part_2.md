@@ -1,6 +1,6 @@
 # Final Project: Part II
 
-Using my sketches developed from last week, I further developed my story outline and relevant components visually through the use of a storyboard.  
+Using my sketches developed from last week, I further developed my story outline and relevant components visually through the use of a (storyboard).[https://preview.shorthand.com/DcEyCmJFuJEdhxcK].  
 My storyboards gives a visual walk-through of the primary elements of my updated outline, tying in my sketches where appropriate to illustrate how I intend to lead the reader through my experience.
 
 
