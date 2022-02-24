@@ -21,56 +21,64 @@ The following questions were asked of the three survey respondents using the fol
 8.	Any final thoughts, comments, or suggestions?
 
 # Responses
-Question 1
+# Question 1
+
 Person 1: US college students and administrators
 
 Person 2: College students and  School Administrators
 
 Person 3: College students and college leadership
 
-Question 2
+# Question 2
+
 Person 1: It was a clear presentation
 
 Person 2: None
 
 Person 3: No, everything was very straightforward
 
-Question 3
+# Question 3
+
 Person 1: The difference is mental illness between males and females was larger than I'd thought
 
 Person 2: Breakdown of college students with mental disorders
 
 Person 3: I really like the graphs and facts stated in the presentation
 
-Question 4
+# Question 4
+
 Person 1: It is sufficient as an high level introduction to the problem of mental illness.
 
 Person 2: Maybe quotes from students on what they think can also help, or their challenges with these issues.
 
 Person 3: No
 
-Question 5
+# Question 5
+
 Person 1: The eyes, I was looking at them longer than was needed
 
 Person 2: Nope. All very informative
 
 Person 3: No
 
-Question 6
+# Question 6
+
 Person 1: Yes the data provided quantitative evidence for the main argument
 
 Person 2: Yes
 
 Person 3: Yes
 
-Question 7
+# Question 7
+
 Person 1: Mental illness is prevalent in the US especially among college aged women.
 
 Person 2: More people than we expect have mental disorders, and school administrators can do more for the student body when it comes to mental health
 
 Person 3: Mental health is a prevalent issue in todays society. This is especially true in women and college aged students
 
-Question 8
+# Question 8
+
 Person 1: Great presentation overall.
 
 Person 2: Well put together. I love the flow and the graphics. 
