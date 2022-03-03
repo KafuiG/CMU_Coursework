@@ -1,5 +1,3 @@
-
-Find the link to part 1 and 2 of my final project here [Part I](final_project_part_1.md) and [Part II](final_project_part_2.md). 
 <!-- START SHORTHAND EMBED -->
    
 <div class="sh_embed sh-embed-dark" data-sh-embed>
@@ -351,5 +349,9 @@ Photo by Sasha  Freemind on Unsplash
 Photo by I.am_nah on Unsplash
 Photo by Rachel McDermott on Unsplash
 Videos by https://www.videvo.net/profile/videvo/
+
+[Part I](Final_Project_Part_1.md)
+
+[Part II](Final_Project_Part_2.md)
 
 [Return to the Home Page](README.md)
