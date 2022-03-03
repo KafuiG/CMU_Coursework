@@ -102,8 +102,8 @@ Generally, the survey respondents found the presentation to be quite compelling.
  3. I will consider changing the visualizations in Shorthand per the feedback from my survey respondents.
 
 
-[Part I](final_project_part_1.md)
+[Part I](Final_Project_Part_1.md)
 
-[Part III](final_project_part_3.md)
+[Part III](Final_Project_Part_3.md)
 
 [Return to the Home Page](README.md)
