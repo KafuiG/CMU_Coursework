@@ -41,3 +41,5 @@ I plan on completing the my final project using Shorthand. I will probably make 
 [Final Project: Part 2](Final_Project_Part_2.md)
 
 [Final Project: Part 3](Final_Project_Part_3.md)
+
+[Return to the Home Page](README.md)
