@@ -100,3 +100,6 @@ Generally, the survey respondents found the presentation to be quite compelling.
  1. I intend on doing a second round of surveys for a draft of the final presentation, and implementing the feedback accordingly.
  2. The call to action and recommendation sections would need to be fully fleshed out with citations.
  3. I will consider changing the visualizations in Shorthand per the feedback from my survey respondents.
+
+
+Find the link to part 1 and 2 of my final project here [Part I](final_project_part_1.md) and [Part II](final_project_part_2.md). 
