@@ -1,3 +1,7 @@
+# Final Project: Part III
+## Final project overview
+My final project shows the impact of Covid-19 on mental health in US colleges. Starting with some background I give some statistics that show that in the years leading into the pandemic, mental health incidents were already increasing rapidly in US colleges. Most importantly for administrators, I show that poor mental health reduces productivity by 50% in US colleges, which should be a major concern for school administrators. Then, I look at the impact of COVID-19 and show the leading causes of mental stress among students. In conclusion, I recommend increased investment in counseling centers, periodic evaluation of mental health resources and setting up student-led and student-appointed task forces to school administrators. Click the link below to view my story.
+
 <!-- START SHORTHAND EMBED -->
    
 <div class="sh_embed sh-embed-dark" data-sh-embed>
@@ -296,11 +300,6 @@
   
       
 <!-- END SHORTHAND EMBED -->
-# Final Project: Part III
-## Final project overview
-My final project shows the impact of Covid-19 on mental health in US colleges. Starting with some background I give some statistics that show that in the years leading into the pandemic, mental health incidents were already increasing rapidly in US colleges. Most importantly for administrators, I show that poor mental health reduces productivity by 50% in US colleges, which should be a major concern for school administrators.
-Then, I Look at the impact of COVID-19 and show the leading causes of mental stress among students which are distracted focus and anxiety about academic performance and job search are .
-In conclusion, I recommend increased investment in counseling centers, periodic evaluation of mental health resources and setting up student-led and student-appointed task forces .
 
 ## Part I
 During the first phase of the project, I focused on developing the arc of my data story about mental health in the United States. I gathered data from various sources and made the decision to focus on the state of mental health in US colleges. I also ideated the data visualizations that would be necessary to make the story compelling to its intended audience (i.e., school administrators and officials).
