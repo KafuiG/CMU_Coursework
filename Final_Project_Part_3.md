@@ -336,17 +336,17 @@ After my presentation, I made the small change of adding spaces to my transition
 From this data story creation process, I realized how instrumental getting feedback from a somewhat representative sample of your target audience is to telling a compelling story using data. Secondly, the process of narrowing down the scope of my story made me understand the importance of making a concise point that captures the attention of your audience. Prior to this project, I would often begin writeups with a very generic big-picture of the problem before focusing in on the topic at hand. Furthermore, I also learned that surveys need to be issued with the survey creator present while the respondent takes the survey to ensure that responses are thorough enough to be useful for feedback. Lastly, this course was the perfect combination of my interest in solving problems with large datasets and my passion for visual arts -- it was very fulfilling to exercise my creativity in the space of data analytics.
 
 ## References
-https://iacsinc.org/staff-to-student-ratios/
-https://repository.upenn.edu/cgi/viewcontent.cgi?article=1196&context=anthro_seniortheses
-https://www.gatech.edu/sites/default/files/documents/pathforward/gt-student-mental-health-report.pdf
-https://www.jmir.org/2020/9/e22817/
-https://healthymindsnetwork.org/data/
-https://www.tandfonline.com/doi/figure/10.1080/07448481.2018.1515748?scroll=top&needAccess=true
-https://www.academia.edu/download/73838324/8-145_text.pdf
-Photo by Sasha  Freemind on Unsplash   
-Photo by I.am_nah on Unsplash
-Photo by Rachel McDermott on Unsplash
-Videos by https://www.videvo.net/profile/videvo/
+1. https://iacsinc.org/staff-to-student-ratios/
+2. https://repository.upenn.edu/cgi/viewcontent.cgi?article=1196&context=anthro_seniortheses
+3. https://www.gatech.edu/sites/default/files/documents/pathforward/gt-student-mental-health-report.pdf
+4. https://www.jmir.org/2020/9/e22817/
+5. https://healthymindsnetwork.org/data/
+6. https://www.tandfonline.com/doi/figure/10.1080/07448481.2018.1515748?scroll=top&needAccess=true
+7. https://www.academia.edu/download/73838324/8-145_text.pdf
+8. Photo by Sasha  Freemind on Unsplash   
+9. Photo by I.am_nah on Unsplash
+10. 10. Photo by Rachel McDermott on Unsplash
+11. Videos by https://www.videvo.net/profile/videvo/
 
 [Part I](Final_Project_Part_1.md)
 
