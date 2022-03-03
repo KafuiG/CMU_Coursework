@@ -345,7 +345,7 @@ The second change resulted from narrowing the focus of my topic to the impact of
 
 After my presentation, I made the small change of adding spaces to my transitions and reformatting some of my text.
 
-From this data story creation process, I realized how instrumental getting feedback from a somewhat representative sample of your target audience is.
+From this data story creation process, I realized how instrumental getting feedback from a somewhat representative sample of your target audience is to telling a compelling story using data. Secondly, the process of narrowing down the scope of my story made me understand the importance of making a concise point that captures the attention of your audience. Prior to this project, I would often begin writeups with a very generic big-picture of the problem before focusing in on the topic at hand. Furthermore, I also learned that surveys need to be issued with the survey creator present while the respondent takes the survey to ensure that responses are thorough enough to be useful for feedback.
 
 ## References
 
