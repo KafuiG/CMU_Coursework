@@ -38,8 +38,8 @@ I plan on creating intitial visualizations of my sketches above, using Flourish.
 
 I plan on completing the my final project using Shorthand. I will probably make some visuals using [Flourish](https://flourish.studio/) and others using Tableau. I intend to use FLoursh mainly, since I am better at using it. However, I'll use [Tableau](https://shorthand.com/) if I find that Flourish is limiting in terms of design options. I will use Shorthand to pull together text and my visualizations into a coherent story. 
 
-[Part II](final_project_part_2.md)
+[Part II](Final_Project_Part_2.md)
 
-[Part III](final_project_part_3.md)
+[Part III](Final_Project_Part_3.md)
 
 [Return to the Home Page](README.md)
