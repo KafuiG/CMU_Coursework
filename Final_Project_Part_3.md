@@ -343,10 +343,10 @@ From this data story creation process, I realized how instrumental getting feedb
 5. https://healthymindsnetwork.org/data/
 6. https://www.tandfonline.com/doi/figure/10.1080/07448481.2018.1515748?scroll=top&needAccess=true
 7. https://www.academia.edu/download/73838324/8-145_text.pdf
-8. Photo by Sasha  Freemind on Unsplash   
-9. Photo by I.am_nah on Unsplash
-10. 10. Photo by Rachel McDermott on Unsplash
-11. Videos by https://www.videvo.net/profile/videvo/
+8. Photo by [Sasha  Freemind](https://unsplash.com/@sashafreemind?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/black-window?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)   
+9. Photo by [I.am_nah](https://unsplash.com/@i_am_nah?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/black?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+10. Photo by [Rachel McDermott](https://unsplash.com/@mrsrachelmcdermott?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/black?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+11. Videos by [Videvo](https://www.videvo.net/profile/videvo/)
 
 [Part I](Final_Project_Part_1.md)
 
