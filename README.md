@@ -19,6 +19,5 @@ My coursework in the Public Policy & Management program here has provided me wit
 [Final Project: Part 2](final_project_part_2.md)  
 #### Week 6
 [Final Project: Part 3](Final_Project_Part_3.md)    
-#### Week 7
-Final Presentation
+
 
