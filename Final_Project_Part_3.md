@@ -314,15 +314,14 @@ Using the survey responses, I chose to make significant changes to my data visua
 ## Part III: Explained in terms of changes from Part II
 In the third phase of this project, I implemented feedback from the survey respondents in Phase II. I have divided this section into the main categories of changes made in this phase.
 
-## Narrowing down the scope
-
+### Narrowing down the scope
 After discussion with one of my survey respondents and the professor, I chose to narrow the scope of my story to focus on the impact of COVID-19 on mental health in US colleges.
 This focus provided me with perspective on what type of data needed to be visualized to tell a compelling story about why addressing mental health should be a priority in US universities.
 
-## Audience
+### Audience
 The intended audience for my project is school administrators and officials. With the already deplorable state of mental health on college campuses prior to the pandemic, school officials need to realize that mental illness causes a 50% reduction in productivity. Furthermore, the increasing rate of suicide attempts is an alarming statistic that compels them into action.
 
-## Data Visualizations and Recommendations
+### Data Visualizations and Recommendations
 The main changes that I made to the data visualizations:
 - Added a consistent color scheme to align with the "dark theme" of depression and anxiety
 - Included new data from recent studies showing the impact of the pandemic on mental health on these campuses
