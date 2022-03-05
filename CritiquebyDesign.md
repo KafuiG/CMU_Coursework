@@ -1,4 +1,4 @@
-## Step 1: find a data visualization (with data you can use!)
+## Step 1: Find a Data Visualization
 In 2015, the United Nations set universal (i.e., 100%) access to affordable, reliable and clean electricity by 2030 as Goal 7 of its Sustainable Development Goals (SDGs). However, as of 2020, over 800 million people lack access to electricity, 600 million of which reside in sub-Saharan Africa. As such, efforts have been made to increase electricity access in the sub-continent. In light of this, utility companies and other stakeholders in the energy sector have sought to determine how demand for electricity will evolve in the coming years. Thus, I chose to visualize the Ethiopian Energy Authority's electricity demand projections to show the projected trend in demand over the coming years, per their estimates.
 Here is the visualization below.
 
@@ -11,7 +11,7 @@ I had to create a data table from the visualization above because it was not pro
 
 
 
-## Step 2: critique the visualization
+## Step 2: Critique the Visualization
 I will be critiquing this visualization based on the following criteria based on using Stephen Frew’s Data Visualization Effectiveness Profile.
 
 **2.1	Usefulness** 
