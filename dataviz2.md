@@ -8,8 +8,8 @@ The data set used for part one and two are government debt to GDP ratio sourced 
 ### Part 1: Working with OECD
 #### 1.1  Bar chart 
 The Organization for Economic Co-operation and Development (OECD) gives access to free downloadable datasets and a tool to allow data visualization to be customized and embed directly from their website.
-This plot shows the general government's debt-to-GDP ratio for the year 2020 for Turkey, Romania and the united states. 
-<iframe src="https://data.oecd.org/chart/6BlO" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/6BlO" target="_blank">OECD Chart: General government debt, Total, % of GDP, Annual, 2020</a></iframe>
+This plot shows the general government's debt-to-GDP ratio for the year 2020 for United states. 
+<iframe src="https://data.oecd.org/chart/6Dmv" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/6Dmv" target="_blank">OECD Chart: General government debt, Total, % of GDP, Annual, 2020</a></iframe>
 
 
 ### Part 2: Working with Flourish
