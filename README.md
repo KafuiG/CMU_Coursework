@@ -20,4 +20,4 @@ My coursework in the Public Policy & Management program here has provided me wit
 #### Week 6
 [Final Project: Part 3](Final_Project_Part_3.md)    
 
-
+Here is a [link](https://public.tableau.com/app/profile/kafui7414) to my public tableau account
