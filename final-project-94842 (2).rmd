@@ -1,0 +1,1405 @@
+---
+title: "FINAL PROJECT"
+author: "Manmitha Patya Gulipilli, Kafui Godzi"
+date: "12 December, 2020"
+output:
+  html_document:
+    theme: paper
+    highlight: tango
+    toc: yes
+    toc_float: yes
+    toc_depth: 5
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+---
+
+### **1. PROBLEM STATEMENT**
+
+<font color="#0033cc">
+
+This project explores Sex-related differences and tries to answer the question : is there a significant difference in income between men and women? Does the difference vary depending on other factors (e.g., education, marital status, criminal history, drug use, childhood household factors, profession, etc.)?
+
+</font>
+
+### **2. PACKAGE LOADING**
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+options(scipen=4)
+```
+
+
+### **3. IMPORTING THE DATA**
+
+```{r}
+# Import starting data
+nlsy <- read_csv("http://www.andrew.cmu.edu/user/achoulde/94842/final_project/nlsy97/nlsy97_Nov2020.csv")
+```
+
+### **4. DATA PROCESSING** 
+
+<font color="#0033cc">
+
+In this section, we change the column names to those which can easily be understood. We also change the type of the variables for ease of manipulation. 
+
+</font>
+
+```{r}
+# Change column names to question name abbreviations (you will want to change these further)
+colnames(nlsy) <- c("PSTRAN_GPA.01_PSTR",
+    "total_incarcerations",
+    "INCARC_AGE_FIRST_XRND",
+    "INCARC_LENGTH_LONGEST_XRND",
+    "PUBID_1997",
+    "teacher_good",
+    "YSCH-37000_1997",
+    "YSAQ-010_1997",
+    "YSAQ-369_1997",
+    "YEXP-300_1997",
+    "YEXP-1500_1997",
+    "YEXP-1600_1997",
+    "YEXP-1800_1997",
+    "YEXP-2000_1997",
+    "gender",
+    "KEY_BDATE_M_1997",
+    "birth_year",
+    "PC8-090_1997",
+    "PC8-092_1997",
+    "phy_emo_disability",
+    "female_depression",
+    "male_depression",
+    "CV_AGE_12/31/96_1997",
+    "CV_BIO_MOM_AGE_CHILD1_1997",
+    "CV_BIO_MOM_AGE_YOUTH_1997",
+    "CV_CITIZENSHIP_1997",
+    "CV_ENROLLSTAT_1997",
+    "CV_HH_NET_WORTH_P_1997",
+    "CV_YTH_REL_HH_CURRENT_1997",
+    "CV_MSA_AGE_12_1997",
+    "CV_URBAN-RURAL_AGE_12_1997",
+    "CV_SAMPLE_TYPE_1997",
+    "CV_HGC_BIO_DAD_1997",
+    "CV_HGC_BIO_MOM_1997",
+    "fathers_highest_grade",
+    "mothers_highest_grade",
+    "race",
+    "YSCH-6800_1998",
+    "YSCH-7300_1998",
+    "used_drugs",
+    "YSAQ-371_2000",
+    "YSAQ-282J_2002",
+    "YSAQ-282Q_2002",
+    "CV_HH_NET_WORTH_Y_2003",
+    "CV_BA_CREDITS.01_2004",
+    "YSAQ-000B_2004",
+    "YSAQ-373_2004",
+    "YSAQ-369_2005",
+    "CV_BIO_CHILD_HH_2007",
+    "YTEL-52~000001_2007",
+    "YTEL-52~000002_2007",
+    "YTEL-52~000003_2007",
+    "YTEL-52~000004_2007",
+    "CV_BIO_CHILD_HH_2009",
+    "college_type",
+    "family_income",
+    "CV_HH_SIZE_2011",
+    "CV_HH_UNDER_18_2011",
+    "CV_HH_UNDER_6_2011",
+    "degree_completed",
+    "CV_BIO_CHILD_HH_2011",
+    "YSCH-3112_2011",
+    "YSAQ-000A000001_2011",
+    "YSAQ-000A000002_2011",
+    "weight",
+    "YSAQ-360C_2011",
+    "YSAQ-364D_2011",
+    "YSAQ-371_2011",
+    "YSAQ-372CC_2011",
+    "YSAQ-373_2011",
+    "YSAQ-374_2011",
+    "industry",
+    "CV_BIO_CHILD_HH_2015",
+    "YEMP_INDCODE-2002.01_2017",
+    "YEMP_OCCODE-2002.01_2017",
+    "CV_MARSTAT_COLLAPSED_2017",
+    "YINC-1400_2017",
+    "income",
+    "YINC-1800_2017",
+    "YINC-2400-2017",
+    "spouse_income",
+    "YINC-2700_2017",
+    "CVC_YTH_REL_HH_AGE6_YCHR_XRND",
+    "CVC_SAT_MATH_SCORE_2007_XRND",
+    "CVC_SAT_VERBAL_SCORE_2007_XRND",
+    "CVC_ACT_SCORE_2007_XRND",
+    "CVC_HH_NET_WORTH_20_XRND",
+    "CVC_HH_NET_WORTH_25_XRND",
+    "CVC_ASSETS_FINANCIAL_25_XRND",
+    "CVC_ASSETS_DEBTS_20_XRND",
+    "CVC_HH_NET_WORTH_30_XRND",
+    "CVC_HOUSE_VALUE_30_XRND",
+    "CVC_HOUSE_TYPE_30_XRND",
+    "CVC_ASSETS_FINANCIAL_30_XRND",
+    "CVC_ASSETS_DEBTS_30_XRND")
+```
+
+```{r}
+ str(nlsy)
+```
+
+
+
+####  (A)  DATA WE WILL BE WORKING WITH
+
+<font color="#0033cc">
+
+After reading through the code book for variables, we know that there are many columns/ variables which are supposed to categorical in nature. But, after using the `str()` function as shown above, we see that many variables which are supposed to be categorical in nature are mapped as numeric. This subset of categorical data will have to be transformed into factor variables to improve the interpretability. 
+
+</font>
+
+####  (B)  DESCRIPTION OF THE VARIABLES BEING CONSIDERED
+
+<font color="#0033cc">
+
+1. teacher_good :       Teachers have a very impact on the student's education progress which can affect their job and income. 
+2. gender :             We are evaluating the various conditions for bias between the male and the female gender
+3. phy_emo_disability : Any form of disability will have an effect on the person's earning capabilities
+4. female_depression :  Depression can have adverse effects on the ability to earn a strong income. 
+5. male_depression :    Depression can have adverse effects on the ability to earn a strong income. 
+6. race :               There might be an effect of race on the individual's income.
+7. college_type :       Difference between a public and a private college may lead to pay gaps. 
+8. family_income :      Income of the family may have an effect on the income difference between male and female
+9. degree_completed :   The degree of an individual is assumed to have an impact on the income gap
+10. income :            This is the dependent variable and we would like to assess how it varies between men and women
+11. spouse_income :     It might have an effect or influence on the individuals income
+12. birth_year :        Birth_year might have an effect on an individual's income
+13. total_incarcerations:       The number of times a respondent has been incarcerated might have an effect on the types of job the respondent can get and therefore might affect income
+14. fathers_highest_grade:        Resident fathers highest grade might have an impact on income earned by respondent.
+15. mothers_highest_grade:        Resident mothers highest grade might have an impact on income earned by respondent.
+16: used_drugs:       Income earned by respondent might be affected by respondents use of cocaine/hard drugs.
+17. weight:       Income can be a limiting factor on the types of jobs an individual can do and therefore might affect income.
+
+</font>
+
+####  (C)  CHANGING THE NUMERIC CODINGS IN SELECTED VARIABLES TO MORE INTERPRTABLE TYPES (FOR CATEGORICAL VARIABLES) AND CLEANING THE DATA
+
+```{r}
+nlsy <- mutate(nlsy, gender = recode_factor(gender, 
+                                      `1` = "Male",
+                                      `2` = "Female",
+                                      `-4` = 'NA',
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+               teacher_good = recode_factor(teacher_good, 
+                                       `1` = 'Strongly agree',
+                                       `2` = 'Agree',
+                                       `3` = 'Disagree',
+                                       `4` = 'Strongly Disagree',
+                                      `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),        
+               phy_emo_disability = recode_factor(phy_emo_disability, 
+                                       `1` = 'Yes',
+                                       `0` = 'No',
+                                      `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+               female_depression = recode_factor(female_depression, 
+                                       `0` = 'Not true',
+                                       `1` = 'Sometimes true',
+                                       `2` = 'Often true',
+                                       `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+               male_depression = recode_factor(male_depression, 
+                                       `0` = 'Not true',
+                                       `1` = 'Sometimes true',
+                                       `2` = 'Often true',
+                                      `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+               race = recode_factor(race, 
+                                       `1` = 'Black',
+                                       `2` = 'Hispanic',
+                                       `3` = 'Mixed Race (Non-Hispanic)',
+                                       `4` = 'Non-Black / Non-Hispanic',
+                                      `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+
+               college_type = recode_factor(college_type, 
+                                       `1` = 'Public institution',
+                                       `2` = 'Private not-for-profit institution',
+                                       `3` = 'Private for-profit institution',
+                                      `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+               
+               degree_completed = recode_factor(degree_completed, 
+                                       `0` = 'None',
+                                       `1` = 'GED',
+                                       `2` = 'High school',
+                                       `3` = 'Assoc/Jun coll.(AA)',
+                                       `4` = "(BA,BS)",
+                                       `5` = "(MA,MS)",
+                                       `6` = 'PhD',
+                                       `7` = 'Prof-(DDS,JD,MD)',
+                                      `-4` = 'NA',
+                                      `-3` = "UNK",
+                                      `-2` = "UNK",
+                                      `-5` = "?",
+                                      `-1` = "?"),
+               used_drugs = recode_factor(used_drugs,
+                           `0` = "No",
+                           `1` = "Yes",
+                           `-4` = 'NA',
+                           `-3` = "UNK",
+                           `-2` = "UNK",
+                           `-5` = "?",
+                           `-1` = "?"))
+                 
+nlsy <- mutate_at(nlsy, c("fathers_highest_grade", "mothers_highest_grade"), ~recode_factor(.x,
+                                                                                            `0` = "None",
+                                                                                            `1` = "1ST GRADE",
+                                                                                            `2` = "2ND GRADE",
+                                                                                            `3` = "3RD GRADE",
+                                                                                            `4` = "4TH GRADE",
+                                                                                            `5` = "5TH GRADE",
+                                                                                            `6` = "6TH GRADE",
+                                                                                            `7` = "7TH GRADE",
+                                                                                            `8` = "8TH GRADE",
+                                                                                            `9` = "9TH GRADE",
+                                                                                            `10` = "10TH GRADE",
+                                                                                            `11` = "11TH GRADE",
+                                                                                            `12` = "12TH GRADE",
+                                                                                            `13` = "1ST YEAR COLLEGE",
+                                                                                            `14` = "2ND YEAR COLLEGE",
+                                                                                            `15` = "3RD YEAR COLLEGE",
+                                                                                            `16` = "4TH YEAR COLLEGE",
+                                                                                            `17` = "5TH YEAR COLLEGE",
+                                                                                            `18` = "6TH YEAR COLLEGE",
+                                                                                            `19` = "7TH YEAR COLLEGE",
+                                                                                            `20` = "8TH YEAR COLLEGE OR MORE",
+                                                                                            `95` = "UNGRADED",
+                                                                                            `-4` = 'NA',
+                                                                                            `-3` = "UNK",
+                                                                                            `-2` = "UNK",
+                                                                                            `-5` = "?",
+                                                                                            `-1` = "?"))
+```
+
+
+
+<font color="#0033cc">
+
+Based on the descriptions of the variables in the codebook, we have re_factored the variables to obtain meaningful interpretations. 
+The data has been cleaned using the following notations:
+
+ - '-4' values which represent 'valid skip' have been converted to 'NA' as they are valid skips.
+
+- '-3' and '-2' values which represent 'invalid skip' and 'don’t know' respectively have been converted to 'UNK' because they were not answered.
+
+- '-5' and '-1' which represent 'non-interview' and 'refusal' respectively have been converted to '?'
+
+- The reason I chose to not completely remove the values which are coded as negative is because when it comes to categorical variables, each category of "NA" and "UNK" has a special interpretation and meaning and it is important that we explore it. 
+
+</font>
+
+####  (D)  RE-VERIFYING WITH `str()`
+
+<font color="#0033cc">
+
+We now use the `str()` command again to see check the type of each of the variables. We are doing this to verify that all the categorical variables are being represented as factors and all numeric variables are being represented as type numeric. 
+
+</font>
+
+```{r}
+str(nlsy)
+```
+
+<font color="#0033cc">
+
+We see that all the categorical variables which will be used by us have been changed to factor variables and they now have easily interpretable labels.
+
+We will now subset our dataset in such a way that we can proceed working with a data set that contains only the variables of interest.
+
+Additionally, we will also be replacing all the negative values of the numeric variables with `NA`.
+
+</font>
+
+```{r , warning=FALSE}
+variables.interest <- c("gender" , "race", "birth_year", "college_type", "degree_completed" , "income","phy_emo_disability" ,"female_depression" ,"male_depression", "teacher_good", "family_income" ,"spouse_income", "total_incarcerations", "fathers_highest_grade", "mothers_highest_grade", "used_drugs", "weight")
+
+nlsy_proj <- nlsy %>%
+  select(all_of(variables.interest))
+
+nlsy_proj[nlsy_proj < 0] <- NA
+
+```
+
+<font color="#0033cc">
+
+We  now have a subset of the nlsy data set and named it nlsy_proj. This contains the 12 variables which are of interest to us. 
+We have also replaced all the negative values in income, family_income, spouse_income, fathers_highest_grade, mothers_highest_grade, used_drugs and weight with NA.
+
+</font>
+
+####  (E)  CHECKING FOR THE PROPORTING ON `NA` VALUES
+
+<font color="#0033cc">
+
+Here, we have checked for the proportion of NA values in each of the variables of interest and if in any case, we have variables which contain more than 50% NA values, we will not be using them in our analysis.
+
+</font>
+
+```{r}
+female_depression_prop <- nlsy_proj %>%
+ group_by(female_depression) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(female_depression_prop , format = "markdown") 
+
+
+male_depression_prop <- nlsy_proj %>%
+ group_by(male_depression) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(male_depression_prop , format = "markdown")
+
+
+teacher_good_prop <- nlsy_proj %>%
+ group_by(teacher_good) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(teacher_good_prop , format = "markdown") 
+ 
+
+
+gender_prop <- nlsy_proj %>%
+ group_by(gender) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(gender_prop , format = "markdown") 
+ 
+
+
+race_prop <- nlsy_proj %>%
+ group_by(race) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(race_prop , format = "markdown") 
+
+
+college_type_prop <- nlsy_proj %>%
+ group_by(college_type) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(college_type_prop , format = "markdown") 
+ 
+
+
+degree_completed_prop <- nlsy_proj %>%
+ group_by(degree_completed) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+ kable(degree_completed_prop , format = "markdown")
+ 
+
+
+phy_emo_disability_prop <- nlsy_proj %>%
+ group_by(phy_emo_disability) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+ kable(phy_emo_disability_prop , format = "markdown")
+ 
+
+
+fathers_highest_grade_prop <- nlsy_proj %>%
+  group_by(fathers_highest_grade) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(fathers_highest_grade_prop , format = "markdown")
+ 
+ 
+ 
+mothers_highest_grade_prop <- nlsy_proj %>%
+  group_by(mothers_highest_grade) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(mothers_highest_grade_prop , format = "markdown")
+ 
+ 
+ 
+used_drugs_prop <- nlsy_proj %>%
+  group_by(used_drugs) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(used_drugs_prop , format = "markdown")
+
+ 
+ 
+total_incarcerations_prop <- nlsy_proj %>%
+  group_by(total_incarcerations) %>%
+  summarize(Percentage = round(((count = n())/(nrow(nlsy_proj))*100),2))
+kable(total_incarcerations_prop , format = "markdown")
+ 
+
+mean(is.na(nlsy_proj$family_income))
+mean(is.na(nlsy_proj$ spouse_income))
+mean(is.na(nlsy_proj$income))
+mean(is.na(nlsy_proj$birth_year))
+mean(is.na(nlsy_proj$weight))
+
+```
+
+<font color="#0033cc">
+
+When we run code to check for proportion of NA values in each of the variable of interest, we see that spouse_income contains 65% NA values, female_depression contains 82.32% NA values, male_depression contains 80.93% NA values, college_type contains 66.08% NA values.
+As the proportion of NA values is greater than 50% in these variables, we will not be considering them for our analysis as this would mean that more than half the people interviewed were not applicable for that particular criteria. 
+
+Hence, our final variables of interest will be : income, gender, race, teacher_good, birth_year , phy_emo_disability , family_income , degree_completed, fathers_highest_grade, mothers_highest_grade, used_drugs, total.incarcerations, weight .
+
+Therefore, we now have only 13 variable of interest instead of 17.
+
+</font>
+
+
+####  (F)  MAKING OUR FINAL DATASET 
+
+<font color="#0033cc">
+
+Based on our working so far, we will now take a subset of the final 8 variables of interest. 
+
+</font>
+
+```{r , echo=FALSE}
+all_of(variables.interest <- c("gender" , "race", "birth_year", "degree_completed", "income","phy_emo_disability" , "teacher_good", "family_income", "fathers_highest_grade", "mothers_highest_grade", "used_drugs", "total_incarcerations", "weight"))
+
+nlsy_proj <- nlsy_proj %>%
+  select(variables.interest)
+#head(nlsy_proj)
+```
+
+
+### **5. DATA SUMMARIZATION** 
+
+####  (A)  LOOKING AT THE VARIATION OF TOTAL INCOME BETWEEN GENDERS
+
+```{r, warning=FALSE}
+gender.colors <- c("#008ee2" , "#ff7b96")
+gen.summary <- nlsy_proj %>%
+  group_by(gender) %>%
+  summarize(count = n() ,income = sum(income, na.rm= TRUE))
+  
+kable(gen.summary, format = "markdown")
+
+gender.income.box <- ggplot(data = nlsy_proj , aes(x = gender, y= income)) + geom_boxplot(aes(fill = gender)) + ggtitle("Gender vs Income") + scale_fill_manual(values = gender.colors) + ylab("Respondent's Income") + xlab("Respondent's Gender") + guides(fill = guide_legend(title = "Gender")) 
+gender.income.box
+
+```
+
+
+<font color="#0033cc">
+
+From the table that has been generated for total income for each gender , we can see that men have total earnings more than women. We should keep in mind that there are 4599 men and 4385 women, ie there are `r 4599 - 4385` more men than there are women. 
+However, upon plotting a box plot for total income against gender, we can see that the median income for men is greater than the median income for women. 
+We also see two points at a considerable distance from the whiskers of the boxplot.These are the outlies which are the top-coded values. 
+
+To check for statistical significance, we can use a t-test
+
+</font>
+
+```{r}
+gender.income.t.test <- t.test(income ~ gender, data = nlsy_proj)
+gender.income.t.test
+```
+```{r, echo=FALSE}
+income.gender.diff <- round((gender.income.t.test$estimate[1] - gender.income.t.test$estimate[2]), 1)
+income.gender.diff
+```
+
+<font color="#0033cc">
+
+At 95% confidence , as the p-vale which is `r round(gender.income.t.test$p.value,46)` is less than 0.05.
+Therefore, gender is statistically significant and men on average earn `r income.gender.diff`  more than women. 
+
+</font>
+
+```{r,warning=FALSE}
+gender.colors <- c("#008ee2" , "#ff7b96")
+gender.income.plot <- ggplot(data = nlsy_proj , aes(x = income)) + geom_histogram(aes(fill = gender)) + facet_wrap(gender~.) + scale_fill_manual(values = gender.colors) + xlab("Respondents' Income") + ylab("Number of Respondents") + guides(fill = guide_legend(title = "Gender")) 
+gender.income.plot
+
+```
+
+
+<font color="#0033cc">
+
+Similar to the observation we made with the box plot, when we look at the histogram, we can observe the similar top-coded values present as outliers. 
+There is a strong possibility of skewed observations because of these outliers. 
+In top-coded data, the income of the people earning the highest 2% is averaged. As a result of this, we can derive wrong inferences. Hence, we remove the top-coded values. 
+
+</font>
+
+```{r, echo=FALSE}
+max(nlsy_proj$income , na.rm = TRUE)
+sum(nlsy_proj$income == 235884 , na.rm = TRUE)
+```
+
+<font color="#0033cc">
+
+We remove the top `r sum(nlsy_proj$income == 235884 , na.rm = TRUE) ` values that have income as $235884. We save this in a new variable called nlsy_proj_top.removed.
+
+</font>
+
+```{r}
+nlsy_proj_top.removed <- nlsy_proj
+nlsy_proj_top.removed[nlsy_proj_top.removed == 235884] <- NA
+nlsy_proj_top.removed <- subset(nlsy_proj_top.removed, income != 'NA')
+```
+
+<font color="#0033cc">
+
+Re-plotting the box-plot after removing the top-coded values
+
+</font>
+
+```{r}
+
+gender.income.box2 <- ggplot(data = nlsy_proj_top.removed , aes(x = gender, y= income)) + geom_boxplot() + ggtitle("Gender vs Income") +  geom_boxplot(aes(fill = gender)) + ggtitle("Gender vs Income") + scale_fill_manual(values = gender.colors) + ylab("Respondent's Income") + xlab("Respondent's Gender") + guides(fill = guide_legend(title = "Gender")) 
+gender.income.box2
+
+```
+
+<font color="#0033cc">
+
+In the box-plot that is plotted after removing the top-coded values, we see no outliers. 
+
+Replotting the histogram without the top-coded values of income. 
+
+</font>
+
+```{r}
+
+gender.income.plot <- ggplot(data = nlsy_proj_top.removed , aes(x = income)) + geom_histogram(aes(fill = gender)) + facet_wrap(gender~.) + xlab("Respondents' Income") + ylab("Number of Respondents") + scale_fill_manual(values = gender.colors) + guides(fill = guide_legend(title = "Gender")) 
+
+gender.income.plot
+
+```
+
+
+<font color="#0033cc">
+
+Looking at the histogram now, i.e, after removing the top-coded values, we can observe that the outliers which were previously present due to the top-coded values are now removed.
+
+
+We will now continue our evaluations without the top-coded income levels.
+
+</font>
+
+####  (B)  LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY RACE
+
+<font color="#0033cc">
+
+Here, we checking the association and influence of race on mean income variation  between genders. 
+
+</font>
+
+```{r}
+
+gen.race.summary <- nlsy_proj_top.removed %>%
+  group_by(gender,race) %>%
+  summarize(mean.income = round(mean(income, na.rm= TRUE),0))
+
+gen.race.summary %>%
+  pivot_wider(names_from = race , values_from = mean.income) %>%
+  kable(format = "markdown")
+  
+
+```
+
+<font color="#0033cc">
+
+We will now calculate the limits of the confidence interval for each category of race by gender and represent it using a barplot for statistical analysis.
+
+</font>
+
+```{r}
+
+gender.colors <- c("#008ee2" , "#ff7b96")
+
+
+gen.race.summary2 <- nlsy_proj_top.removed %>%
+group_by(race,gender)%>%
+  summarize(mean = mean(income , na.rm = TRUE), 
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2])
+
+kable(gen.race.summary2, digits = 4, format = "markdown")
+
+
+gender.race.plot <- ggplot(data = gen.race.summary2 , aes(x = race, y= mean, fill = gender)) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By Race Among Men And Women") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Respondents' Race") + ylab("Respondent's Average Income") + 
+guides(fill = guide_legend(title = "Gender")) + scale_fill_manual( values=gender.colors) + geom_errorbar(aes(ymin=lower, ymax=upper), 
+                width=.2,                    # Width of the error bars
+                position=position_dodge(0.5))
+
+print(gender.race.plot)
+
+```
+
+
+<font color="#0033cc">
+
+From the table, we can see the average income across different groups of race divided by gender.
+From the bar graph plotted, we can make some significant observations:
+- Race seems to have an effect on the income difference between men and women. 
+
+- Taking into account the uncertainty represented by the error bars, there seems to be the largest income gap betwen men and women who are of mixed race - non-hispanic. The smallest income difference across racial groups is there for men and women who are black
+
+- Income difference appear to be consistent across all racial group: On an average,  men seem to earn more than women. 
+
+From these observations, we can say that race is associated with income difference men and women.
+
+
+</font>
+
+####  (C) . LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY THE TEACHER_GOOD VARIABLE
+
+```{r}
+
+gen.teacher.summary <- nlsy_proj_top.removed %>%
+group_by(teacher_good)%>%
+  summarize(Mean.Income = mean(income , na.rm = TRUE) , Standard.Deviation = sd(income, na.rm = TRUE) , Male.Respondents = sum(gender == "Male") ,Female.Respondents = sum(gender == "Female") )
+
+
+gen.teacher.summary
+```
+
+
+<font color="#0033cc">
+
+From the table, we can see the variation that takes place in income based on the feedback about the teacher. 
+In each category of teacher_good, we can see that the number or men and women are almost equal with men being slightly more in number than women. 
+
+
+Plotting a box-plot and histogram for income variation based on teacher:
+
+</font>
+
+```{r}
+
+teacher.income.box <- ggplot(data = nlsy_proj_top.removed , aes(x = teacher_good, y= income)) + geom_boxplot(fill=c('powderblue')) + ggtitle("Teacher vs Income") + ylab("Respondent's Income") + xlab("Teacher") + theme(axis.text.x=element_text(angle = 90, vjust = 0.5))
+
+teacher.income.box
+
+
+gender.teacher.plot <- ggplot(data = nlsy_proj_top.removed , aes(x = teacher_good, y= income, fill = gender)) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By Race Among Men And Women") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Respondents' Race") + ylab("Respondent's Average Income") + 
+guides(fill = guide_legend(title = "Gender")) + scale_fill_manual( values=gender.colors) 
+
+print(gender.teacher.plot)
+
+
+
+```
+
+
+<font color="#0033cc">
+
+From the box plot, we see that the first three categories of 'Strongly Agree', 'Agree' and 'Disagree' seem to have similar median. Hence, we use aov() to test for its statistical significance.
+
+</font>
+
+```{r}
+
+summary(aov(income ~ teacher_good, data = nlsy_proj_top.removed))
+
+```
+
+
+
+<font color="#0033cc">
+
+The p-value is significant at the 0.05 level, so the data suggests that there is an association between income and teacher_good. In other words, average income varies with teacher.
+
+
+
+Now, using a t-test to check for statistical significance between income of men and women.
+We do this by removing the '?' and UNK values.
+
+Checking the mean income across each lever of teacher_good :
+
+</font>
+
+```{r}
+
+nlsy_proj_top.removed2 <- nlsy_proj_top.removed
+nlsy_proj_top.removed2 <- subset(nlsy_proj_top.removed2, teacher_good != '?')
+nlsy_proj_top.removed2 <- subset(nlsy_proj_top.removed2, teacher_good != 'UNK')
+
+gen.teacher.summary2 <- nlsy_proj_top.removed2 %>%
+group_by(teacher_good)%>%
+  summarize(Mean.Income = mean(income , na.rm = TRUE) , Standard.Deviation = sd(income, na.rm = TRUE) ,Male.Respondents = sum(gender == "Male") ,Female.Respondents = sum(gender == "Female"))
+
+kable(gen.teacher.summary2, format = "markdown")
+
+```
+
+
+```{r}
+
+nlsy_proj_top.removed2.summary <- (nlsy_proj_top.removed2) %>%
+group_by(teacher_good )%>%
+  summarize(Income.Diff = (sum(income[gender == "Male"], na.rm = TRUE)-sum(income[gender == "Female"], na.rm = TRUE)),
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2],
+            P.Value = t.test(income)$p.value,
+is.signif = if(P.Value < 0.05){
+  is.signif = 1} else{
+    
+  is.signif = 0}
+)
+
+kable(nlsy_proj_top.removed2.summary, format = "markdown")
+
+
+```
+  
+
+<font color="#0033cc">
+
+From the table above, we can see that there is a statistically significant effect of teacher on the income difference between men and women.
+
+</font>
+
+####  (D) . LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY THE PHY_EMO_DISABILITY VARIABLE
+
+```{r}
+
+gen.disability.summary <- nlsy_proj_top.removed %>%
+group_by(phy_emo_disability)%>%
+  summarize(Mean.Income = mean(income , na.rm = TRUE) , Standard.Deviation = sd(income, na.rm = TRUE) , Male.Respondents = sum(gender == "Male") ,Female.Respondents = sum(gender == "Female") )
+
+kable(gen.disability.summary, format = "markdown")
+```
+
+
+
+<font color="#0033cc">
+
+We can observe that those with physical and emotional limitations have a lower average income compared to those that do not.
+
+
+Plotting a boxplot for variation of income on phy_emo_disability
+
+</font>
+
+```{r}
+teacher.income.box <- ggplot(data = nlsy_proj_top.removed , aes(x = phy_emo_disability, y= income)) +
+  geom_boxplot(fill=c('powderblue')) + 
+  ggtitle("Disability vs Income") + 
+  ylab("Respondent's Income") + 
+  xlab("Disability?") + 
+  theme(axis.text.x=element_text(angle = 90, vjust = 0.5))
+
+teacher.income.box
+
+
+```
+
+<font color="#0033cc">
+
+Now, similar to what we had previously done, we will compute the confidence intervals after removing the '?' values
+
+</font>
+
+```{r}
+
+nlsy_proj_top.disabled <- nlsy_proj_top.removed
+nlsy_proj_top.disabled <- subset(nlsy_proj_top.disabled, phy_emo_disability != '?')
+#nlsy_proj_top.disabled <- subset(nlsy_proj_top.disabled, phy_emo_disability != 'UNK')
+
+
+
+gen.disabled.summary2 <- nlsy_proj_top.disabled %>%
+group_by(phy_emo_disability)%>%
+  summarize(Mean.Income = mean(income , na.rm = TRUE) , Standard.Deviation = sd(income, na.rm = TRUE) ,Male.Respondents = sum(gender == "Male") ,Female.Respondents = sum(gender == "Female"))
+
+kable(gen.disabled.summary2, format = "markdown")
+
+nlsy_proj_top.removed2.summary <- (nlsy_proj_top.disabled) %>%
+group_by(phy_emo_disability)%>%
+  summarize(Income.Diff = (sum(income[gender == "Male"], na.rm = TRUE) - sum(income[gender == "Female"], na.rm = TRUE)),
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2],
+            P.Value = t.test(income)$p.value,
+is.signif = if(P.Value < 0.05){
+  is.signif = 1} else{
+    
+  is.signif = 0}
+)
+
+kable(nlsy_proj_top.removed2.summary, format = "markdown")
+
+
+
+
+
+
+```
+
+
+<font color="#0033cc">
+
+Plotting a bar plot:
+
+</font>
+```{r}
+
+gender.disability.plot <- ggplot(data = nlsy_proj_top.disabled , aes(x = phy_emo_disability, y= income, fill = gender)) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By Physical-Emotional Limitations") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Presence of limitation") + ylab("Respondent's Income") + 
+guides(fill = guide_legend(title = "Gender")) + scale_fill_manual( values=gender.colors) 
+
+print(gender.disability.plot)
+
+```
+
+<font color="#0033cc">
+
+We can see from the plot that with and without diabilities, men seem to be earning more than women. 
+
+</font>
+
+####  (E) . LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY THE FAMILY INCOME VARIABLE 
+
+<font color="#0033cc">
+
+For the variable family income, we will proceed by removing the top-coded value to prevent skewed analysis. 
+
+</font>
+
+```{r , echo=FALSE}
+max.fam.income <- max(nlsy_proj_top.removed$family_income , na.rm = TRUE)
+max.fam.no <- sum(nlsy_proj_top.removed$family_income == 316618 , na.rm = TRUE)
+```
+
+
+```{r}
+nlsy_proj_top.fam.income.removed <- nlsy_proj_top.removed
+nlsy_proj_top.fam.income.removed[nlsy_proj_top.fam.income.removed == 316618] <- NA
+```
+
+
+
+<font color="#0033cc">
+
+We will now check for variation in respondent's income based on family income for the subset of data where income and family income variables do not contain top coded values. 
+
+</font>
+
+```{r,warning=FALSE}
+
+family.income.plot <- ggplot(nlsy_proj_top.fam.income.removed , aes(x = family_income , y = income, color = gender)) + geom_point()+ scale_colour_manual( values=gender.colors) + stat_smooth(method = 'lm' , formula = y ~ x , se = FALSE) + ggtitle("Variation Of Income By Family_Income") + xlab("Family Income") + ylab("Respondent's Income") + 
+guides(fill = guide_legend(title = "Gender")) 
+
+family.income.plot
+
+```
+
+
+<font color="#0033cc">
+
+We can see from the plot that for all values of family income, men earn more than women and as family income increases, earnings by male respondents increases more than earnings by female respondents. 
+
+The variation in income between genders can be observed by checking slope of the regression of income over family_income:
+
+</font>
+
+```{r}
+
+family.income.lm <- nlsy_proj_top.removed %>%
+  group_by(gender) %>%
+  summarize(slope =  lm(income ~ family_income)$coef["family_income"])
+
+kable(family.income.lm, format = "markdown")
+```
+
+<font color="#0033cc">
+
+We see that Men and Women have differnt slopes which shows that the income of an individuals belonging to different genders varies based on family income. 
+
+</font>
+
+####  (F) . LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY BIRTH YEAR VARIABLE
+
+
+
+```{r}
+birth.year.summary2 <- nlsy_proj_top.removed %>%
+group_by(birth_year, gender)%>%
+  summarize(mean = mean(income , na.rm = TRUE), 
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2])
+
+kable(birth.year.summary2, digits = 4, format = "markdown")
+
+
+birth.year.plot <- ggplot(data = birth.year.summary2 , aes(x = birth_year, y= mean, fill = gender)) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By Birth Year Among Men And Women") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Birth Year") + ylab("Respondent's Average Income") + 
+guides(fill = guide_legend(title = "Gender")) + scale_fill_manual( values=gender.colors) + geom_errorbar(aes(ymin=lower, ymax=upper), 
+                width=.2,                    # Width of the error bars
+                position=position_dodge(0.5))
+
+print(birth.year.plot)
+
+```
+
+
+<font color="#0033cc">
+
+From the plot above, we can see that men seem to earn more than women irrespective of year of birth. The 95% confidence bars help us determine the statistical significance of the difference in income among Females and Males across the various Birth Years
+
+</font>
+
+```{r}
+
+birth.year.summary <- nlsy_proj_top.removed %>%
+group_by(birth_year)%>%
+  summarize(mean.income = mean(income , na.rm = TRUE), 
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2])
+
+kable(birth.year.summary, digits = 4 , format = "markdown")
+
+
+gender.year.plot <- ggplot(data = birth.year.summary , aes(x = birth_year, y= mean.income, fill = I("steelblue"))) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By Race Among Men And Women") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Respondents' Birth Year") + ylab("Respondent's Average Income") + 
+geom_errorbar(aes(ymin=lower, ymax=upper), 
+                width=.2,                    # Width of the error bars
+                position=position_dodge(0.5))
+
+print(gender.year.plot)
+
+```
+
+
+
+
+####  (G) . LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY DEGREE_COMPLETED VARIABLE
+
+```{r}
+degree_completed.summary <- nlsy_proj_top.removed %>%
+group_by(degree_completed)%>%
+  summarize(Mean.Income = mean(income , na.rm = TRUE) , Standard.Deviation = sd(income, na.rm = TRUE) , Male.Respondents = sum(gender == "Male") ,Female.Respondents = sum(gender == "Female") )
+
+kable(degree_completed.summary, format = "markdown")
+
+```
+
+
+<font color="#0033cc">
+
+From the summary table we can see that respondents with a Professional degree and those with a PhD seem to have a high average income of $87492.32 and $86083.33 respectively. But the number of individuals the value come from is very small. It is followed by professionals and then my individuals who completed masters degree. From the table you could also see that individuals with a professional  degree has the highest standard deviation.
+
+Plotting box plots
+
+</font>
+````{r}
+
+Degree.box <- ggplot(data = nlsy_proj_top.removed , aes(x = degree_completed, y= income)) + geom_boxplot(fill=c('powderblue')) + ggtitle("Education Level vs Income") + ylab("Respondent's Income") + xlab("Education Level") + theme(axis.text.x=element_text(angle = 90, vjust = 0.5))
+
+Degree.box
+
+```
+
+
+<font color="#0033cc">
+
+From the box plot you could see that professionals degree have high total median income followed by phd degree holders. You could also notice that the individuals with high school degree have many outliers when compared to other degrees. You could notice that ? which refers to refusal and non-interview also has one of the high median total income.
+
+
+We will not check for difference in income between men and women based on the highest degree received. 
+
+</font>
+
+```{r}
+
+degree.summary <- (nlsy_proj_top.disabled) %>%
+group_by(degree_completed)%>%
+  summarize(Income.Diff = (sum(income[gender == "Male"], na.rm = TRUE)-sum(income[gender == "Female"], na.rm = TRUE)),
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2],
+P.Value = t.test(income)$p.value,
+is.signif = if(P.Value < 0.05){
+  is.signif = 1} else{
+    
+  is.signif = 0})
+
+kable(degree.summary, format = "markdown")
+
+
+```
+
+
+<font color="#0033cc">
+
+We can see that there is a significant impact of highest degree received on the income of the respondent. 
+
+</font>
+
+```{r}
+
+degree.summary2 <- nlsy_proj_top.removed %>%
+group_by(degree_completed, gender)%>%
+  summarize(mean = mean(income , na.rm = TRUE), 
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2])
+
+kable(degree.summary2, digits = 4, format = "markdown")
+
+
+degree.plot <- ggplot(data = degree.summary2 , aes(x = degree_completed, y= mean, fill = gender)) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By highest degree Among Men And Women") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Highest Degree") + ylab("Respondent's Average Income") + 
+guides(fill = guide_legend(title = "Gender")) + scale_fill_manual( values=gender.colors) + geom_errorbar(aes(ymin=lower, ymax=upper), 
+                width=.2,                    # Width of the error bars
+                position=position_dodge(0.5))
+
+print(degree.plot)
+
+```
+
+<font color="#0033cc">
+
+We can see from te plot that men seem to earn more for on a average for each education level. Keeping the uncertainty in mind, the error bars tell us that PhD holders have the higest average income overall. 
+
+</font>
+
+#### (H). LOOKING AT INCOME VARIATION BETWEEN MEN AND WOMEN BY RESIDENTIAL FATHERS HIGHEST GRADE COMPLETED
+
+```{r}
+fathers_highest_grade.summary <- nlsy_proj_top.removed %>%
+ group_by(fathers_highest_grade) %>%
+  summarize( Mean.Income = mean(income, na.rm = TRUE),
+             Standard.Deviation = sd(income, na.rm = TRUE),
+             Male.Respondents = sum(gender == "Male"),
+             Female.Respondents = sum(gender == "Female"))
+             
+kable(fathers_highest_grade.summary, format = "markdown")
+```
+
+<font color="#0033cc">
+
+From the summary table we can see that respondents whose residential fathers highest completed grade is 7th grade have a high average income of $65699.73. It is followed by those with 7th and 8th grade highest completed grade. From the table you could also see that individuals residental fathers whose highest grade of completion is 6th grade have the highest standard deviation.
+
+Plotting box plots
+
+</font>
+```{r}
+fathers_highest_grade.box <- ggplot(data = nlsy_proj_top.removed , aes(x = fathers_highest_grade, y= income)) +
+  geom_boxplot(fill=c('powderblue')) + 
+  ggtitle("Residential Fathers Highest Grade Completed vs Income") + 
+  ylab("Respondent's Income") + 
+  xlab("Residential Fathers Highest Grade Completed") + 
+  theme(axis.text.x=element_text(angle = 90, vjust = 0.5))
+fathers_highest_grade.box
+```
+
+<font color="#0033cc">
+
+
+
+We will not check for difference in income between men and women based on residential fathers highest grade completed. 
+
+</font>
+
+```{r}
+
+fathers_highest_grade.summary <- (nlsy_proj_top.disabled) %>%
+group_by(fathers_highest_grade) %>%
+  summarize(Income.Diff = (sum(income[gender == "Male"], na.rm = TRUE) - sum(income[gender == "Female"], na.rm = TRUE)),
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2],
+            P.Value = t.test(income)$p.value,
+            is.signif = if(P.Value < 0.05){
+              is.signif = 1} else{
+                is.signif = 0}
+            )
+kable(fathers_highest_grade.summary, format = "markdown")
+
+
+```
+
+
+<font color="#0033cc">
+
+
+
+</font>
+
+```{r}
+
+fathers_highest_grade.summary2 <- nlsy_proj_top.removed %>%
+group_by(fathers_highest_grade, gender)%>%
+  summarize(mean = mean(income , na.rm = TRUE), 
+            lower = t.test(income)$conf.int[1],
+            upper = t.test(income)$conf.int[2])
+
+kable(fathers_highest_grade.summary2, digits = 4, format = "markdown")
+
+
+fathers_highest_grade.plot <- ggplot(data = fathers_highest_grade.summary2 , aes(x = fathers_highest_grade, y= mean, fill = gender)) +  theme(axis.text.x=element_text(angle =- 90, vjust = 0.5))+ggtitle("Variation Of Income By Fathers Highest Grade Completed Among Men And Women") + geom_bar(position = 'dodge', width = 0.5, stat='identity' ) + xlab("Highest Degree") + ylab("Respondent's Average Income") + 
+guides(fill = guide_legend(title = "Gender")) + scale_fill_manual( values=gender.colors) + geom_errorbar(aes(ymin=lower, ymax=upper), 
+                width=.2,                    # Width of the error bars
+                position=position_dodge(0.5))
+
+print(fathers_highest_grade.plot)
+
+```
+
+<font color="#0033cc">
+
+
+
+</font>
+
+
+### **6. METHODOLOGY**
+
+####  (A)  DATA CLEANING AND DEALING WITH MISSING VALUES
+
+<font color="#0033cc">
+
+The data set was identified to have 91 variables of which some were factor variables which neede to be recoded and some were numeric. We identified that there was a lot of missingness in the dataset.
+We first re-coded the data in various factor variables to interpretable values based on the variable codebook. When it came to handling the negative values, the convention we followed is as follows : 
+
+(i)   'valid skip' (-4) has been converted to 'NA'
+
+(ii)  'invalid skip' (-3) and 'don’t know' (-2) has been converted to 'UNK'
+
+(iii) 'non-interview' (-5) and 'refusal' (-1) has been converted to '?'
+
+When it came to factor variables, we saw above that we treated missing values as just another factor level. For numeric data, we re-coded all the negatives as NA
+
+</font>
+
+####  (B)  DEALING WITH TOP-CODED VARIABLES
+
+<font color="#0033cc">
+
+-In the original dataset, the income variable has been topcoded in such a way that the income for the top 2% of earners is represented as the average of their income. Due to this, we always observe outliers or skewed results when using the original data.
+
+- To deal with the top-coded values, we went ahead and represented the top-coded values in come as NA and the values in family_income as NA and in some part of teh analysis, we removed those rows. The reason we di this is because we did not want skewed results. With top-coding, the highest 2% of men and women will be represented as having the same income. This would negatively impact the study of difference in income between men and women. 
+
+</font>
+
+####  (C)  TABLES OR PLOTS THAT SHOULD HAVE REVEALED INTERESTING TRENDS BUT DID NOT
+
+<font color="#0033cc">
+
+We were under the impression that birth_year variable would show a greater variability in the income variation between men and women. We expected the observation to be that with each passing year, the income of women women would increase, but what we observes was in fact the opposite. And the inccome of women from 1980 to 1984 seemed to decrease. The gap between the income of men and women too did not reduce. 
+
+</font>
+
+####  (D)  INVESTIGATIONS THAT DO NOT APPEAR IN OUR FINDINGS SECTION
+
+<font color="#0033cc">
+
+Our final investigation does not contain the variation of income based on teacher due to the fact that in one of the levels, we have no men. To avoid, disparities, we have omitted that particular variable. Furthermore, we will not be seeing further analysis on birth year and physical emotional disability. The reason we chose to omit birth year is that in order to assess how employable an individual in a particular year, we need to have significant knowledge about the job market and the societal issues in that particular year. 
+
+</font>
+
+####  (E)  ANALYSIS
+
+<font color="#0033cc">
+
+In order to investigate the difference in income between and women based on various factors, we first compare compares the income difference between men and women and tested its significance level. Then, we created data summaries on variables of interest like race, high degree received, family income, etc. We used bar charts and boxplots to examine the relationship between income difference between genders based on the variable and we ran t-tests to check for statistical significance. We also added error bars and and when necessary to derive statistically correct inferences. All the variables we chose seem to be to the income difference between men and women. We then ran multi factor regression tests and add interaction to examine the estimates and p-values to assess the significance.  Some diagnostic tools are utilized to examine the variance of residuals and clear patterns. Finally we compare the two regression models to test which models suits the dataset the best.
+
+In the data set, we are going to run a regression for income over gender, race, family income and degree completed. 
+
+</font>
+
+### **7. FINDINGS** 
+
+
+####  (A)  REGRESSION MODEL
+
+<font color="#0033cc">
+
+We start by assessing which variable is likely to be a statistically significant predictor of income difference between men and women. Here, we have regressed income over gender, race, family_income and degree completed in our model.
+
+</font>
+
+```{r}
+
+options(scipen=4)  # Set scipen = 0 to get back to default
+# Fit regression model
+nlsy.lm <- lm(income ~  + gender + race + family_income + degree_completed, na.action=na.exclude, data = nlsy_proj_top.removed)
+# Regression model summary
+summary.nlsy.lm <- summary(nlsy.lm)
+# Pull coefficients element from summary(lm) object
+kable(summary.nlsy.lm$coef, 
+      digits = c(2,2,2,5 ), format = 'markdown')
+
+```
+
+
+<font color="#0033cc">
+
+As we know that we have three categorical variables in our model (gender, race, degree_completed),  we have to define the baseline that gets set for each of them. The baseline for gender is 'Male' , the baseline for race is 'Black' and the baseline for degree completed is 'None'. The coefficient of genderFemale can be interpreted as, keeping all else constant, Females earn $14878.25 less than men. 
+- The coefficient of raceHispanic can be interpreted as keeping all else constant, those who are hispanic earn $5173.97 more than those who are black.
+
+- The coefficient of raceMixed Race (Non-Hispanic) can be interpreted as keeping all else constant,those who are raceMixed Race (Non-Hispanic) earn $	4171.77 more than those who are black.
+
+- The coefficient of raceNon-Black / Non-Hispanic	can be interpreted as keeping all else constant, those who are Non-Black / Non-Hispanic earn $ 5344.23 more than those who are black.	
+
+- The coefficient of family_income can be interpreted as keeping all else constant, a one unit increase in family income increase the respondent's income by	0.12 units.
+
+- The coefficient of degree_completedGED can be interpreted as, keeping all else constant, those with a GED earn $3454.74 more than those without a degree.
+
+- The coefficient of degree_completedHigh school can be interpreted as keeping all else constant, those who have graduated high school earn $	8910.02 more than those without a degree.
+
+- The coefficient of degree_completedAssoc/Jun coll.(AA) can be interpreted as keeping all else constant those with an associate/junior college degree earn $ 16920.21 more than those without a degree.
+
+- The coefficient of degree_completed(BA,BS)	can be interpreted as keeping all else constant those with a bachelor's degree earn $ 26267.07 more than those without a degree.
+
+- The coefficient of degree_completed(MA,MS) can be interpreted as keeping all else constant those with a master's degree earn $	33335.15 more than those without a degree.
+
+- The coefficient of degree_completedPhD	can be interpreted as keeping all else constant, those with a PhD ear $ 55034.08 more than those without a degree.
+
+- The coefficient of degree_completedProf-(DDS,JD,MD)can be interpreted as keeping all else constant those with a professional degree earn $53220.56 more than those without a degree.
+
+- The coefficient of degree_completedUNK	can be interpreted as keeping all else constant 12615.35 more than those without a degree.
+
+Looking at the p-values, it looks like gender, race, family income and degree completed are statistically significant and can be useful in correctly estimatin a respondent's income. 
+
+</font>
+
+####  (B)  DIAGNOSTIC PLOTS
+
+```{r}
+
+plot(nlsy.lm)
+
+```
+
+
+<font color="#0033cc">
+
+The scale-location plot and the Residuals-leverage plot can help with identifying outliers and non-linearities. 
+
+- Residual vs. Fitted Plot: This plot tells us that this is a linear model where the residuals of variance are increasing as the fitted income values increases.
+
+- Normal QQ plot: the underlying normality assumptions don’t hold here. The residuals are deviating from normality. The upper tail has the most deviation. This confirms that the linear model is not a good fit. 
+
+- Scale and Location plot: This plot tells us that it seems to have an increasing variance.
+
+- Residuals vs Leverage: There appear to be no outliers in the data, this might be because we have removed the top-coded values. 
+
+
+</font>
+
+####  (C)  USING AN INTERACTION TERM TO SHOW INTERACTION BETWEEN RACE AND GENDER
+
+<font color="#0033cc">
+
+The reason we chose to build an interaction model betwen race and gender is that, out of all the variables that we have considered, ie.income, gender, race, teacher_good, birth_year , phy_emo_disability , family_income , degree_completed, race and gender are generally heavily influenced by societal constraints and cannot be controlled by anyone.
+
+</font>
+
+```{r}
+
+nlsy.lm.interact <- update(nlsy.lm, . ~ . + race*gender)
+nlsy.lm.interact.summary <- summary(nlsy.lm.interact)
+kable(nlsy.lm.interact.summary$coef, 
+      digits = c(2,2,2,5 ), format = 'markdown')
+
+```
+
+
+<font color="#0033cc">
+
+We see that three coefficients are estimated in the interaction term 
+The coeffcient of genderFemale:raceHispanic indicates that keeping everything else constant, the average income gap between men and women is 7455.58 dollars lower in black racial groups than in the Hispanic racial group. 
+The p-values indicate that there is a statistically significant difference in the income gap between men and women across racial groups. 
+
+We use the anova() test to compare the linear model nlsy.lm and the linear model nlsy.lm.interact
+
+
+</font>
+
+```{r}
+
+anova(nlsy.lm, nlsy.lm.interact)
+
+```
+
+<font color="#0033cc">
+
+The p-value is statistically significant, so we can reject the null hypothesis that the income gap is the same across all the race categories. In other words, the data suggests that the income gap between men and women does vary with race.
+
+Plotting this variation:
+
+</font>
+
+```{r}
+
+gap.data <- nlsy_proj_top.removed %>%
+  group_by(race) %>%
+  summarize(income.gap = mean(income[gender == "Male"], na.rm = TRUE) -
+              mean(income[gender == "Female"], na.rm = TRUE))
+
+
+gap.data <- mutate(gap.data,
+                   race = reorder(race, -income.gap))
+
+# Same plotting command as before
+ggplot(data = gap.data, aes(x = race, y = income.gap, fill = race)) +
+  geom_bar(stat = "identity") +
+  xlab("Race") + 
+  ylab("Income gap($)") +
+  ggtitle("Income gap between men and women, by race") + 
+  guides(fill = FALSE)
+
+
+
+
+gap.data.conf <- nlsy_proj_top.removed %>%
+  group_by(race) %>%
+  summarize(income.gap = mean(income[gender == "Male"], na.rm = TRUE) -
+              mean(income[gender == "Female"], na.rm = TRUE),
+            upper = -t.test(income ~ gender)$conf.int[1],
+            lower = -t.test(income ~ gender)$conf.int[2],
+            is.significant = as.numeric(t.test(income ~ gender)$p.value < 0.05))
+
+# Re-order the race factor according to gap size
+gap.data.conf <- mutate(gap.data.conf,
+                        race = reorder(race, income.gap))
+
+
+```
+
+### **8. LIMITATIONS IN OUR MODEL**
+
+<font color="#0033cc">
+
+Even though all the variations are accounted for, the model is not perfect. The diagnostic plots are proof of this. Example, the increasing variance which is observed can be further analyzed. The non-normality of the QQ plot can be re-evaluated and it;s variation with other factors that were not chosen by us can be verified. 
+
+</font>
+
+
+### **9. DISCUSSIONS** 
+
+<font color="#0033cc">
+
+Our conclusion is that gender and race impact the income level of an individual. We believe that we have developed and have drawn conclusions from the appropriate summary tables to determine statistical significance . 
+We believe that the various summaries analyzed and the plots observed by us show that there is a significant impact of gender on the income of an individual.
+We believe that further analysis can be performed using the industry variable to see how the industry of employment contributes to the income of each of the genders. We chose not to use the industy variable as we wanted to focus on education and other societal factors. 
+
+</font>
+
+
+
+
+
+
